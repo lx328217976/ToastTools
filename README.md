@@ -387,14 +387,23 @@ GlobalUtils.setApplicationContext(this);
 步骤1：在你要共享的module的build.gradle文件中添加如下语句：
 
 apply plugin: 'maven'
+
 uploadArchives {
+
     repositories.mavenDeployer {
+    
         def mavenDirPath = file('D:\\work\\AwesomeProject2\\Test1112\\ToastToolsL') // 编译好后的共享资源将被存放的目录
+        
         repository(url:"file://${mavenDirPath.absolutePath}") // 必须双引号，单引号不会转义$
+        
         pom.project {
+        
             groupId "com.lory.toasttoolsl" // 可以随意取，一般取包名
+            
             artifactId "toasttoolsl" // 可以随意取，一般取库的名字
+            
             version "1.0.0" // 版本号
+            
         }
     }
 }
@@ -403,18 +412,29 @@ uploadArchives {
 打开Android Studio的命令行，并执行
 例如：
 D:\work\AwesomeProject2\Test1112>gradlew :toasttoolsl:uploadArchives
+
 其中：D:\work\AwesomeProject2\Test1112是android studio中的Terminal
+
 toasttoolsl 是模块的名字
+
 uploadArchives 是第一步中定义的
 
+
 步骤3：登录GitHub，右上角点击Your repositories --> New 一个新的
+
 将 D:\\work\\AwesomeProject2\\Test1112\\ToastToolsL 目录下生成的 com直接拖进去上传（com为你指定的groupId "com.lory.toasttoolsl"中的com）
 
+
 步骤4：生成仓库地址
+
 点击你 项目名称：ToastToolsL ，copy浏览器输入框中的地址
+
 复制出仓库当前界面的链接地址
+
 https://github.com/lx328217976/ToastTools
+
 对其进行修改：
+
 https://raw.githubusercontent.com/Geroff/MavenTest/master
 
 步骤5：将上方使用说明
