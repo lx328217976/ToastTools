@@ -31,7 +31,7 @@ allprojects {
 GlobalUtils.setApplicationContext(this);
 
 第三步：
-你就可以再项目中随时调用ToastUtil的方法了
+你就可以在项目中随时调用ToastUtil的方法了
 
 例如：
  ToastUtil.showCustomToast("我的第一个共享module",true);
