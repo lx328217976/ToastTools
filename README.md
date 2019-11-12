@@ -10,9 +10,13 @@ maven {
         
 例如：
 allprojects {
+
     repositories {
+    
         google()
+        
         jcenter()
+        
         maven {
             url "https://raw.githubusercontent.com/lx328217976/ToastTools/master"
         }
