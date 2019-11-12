@@ -379,3 +379,6 @@ GlobalUtils.setApplicationContext(this);
 例如：
  ToastUtil.showCustomToast("我的第一个共享module",true);
 
+
+
+
